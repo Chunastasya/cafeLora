@@ -12,7 +12,8 @@ import {Menu} from '../components/Menu'
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <header>
-    <Header></Header>
+    <Header>
+    </Header>
     </header>
     <main>
        <Banner></Banner> 
@@ -25,3 +26,20 @@ document.querySelector('#root').innerHTML = render(
     </footer>
   </div>
 );
+
+
+const navButtonElement = document.querySelector('.nav-btn')
+const rolloutNavElement = document.querySelector('.rollout-nav')
+
+navButtonElement.addEventListener('click', () => {
+  rolloutNavElement.classList.toggle('nav-closed')
+} );
+
+rolloutNavElement.addEventListener('click',() => {
+  rolloutNavElement.classList.add('nav-closed')
+} )
+
+
+
+
+
