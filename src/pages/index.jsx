@@ -8,6 +8,10 @@ import {Gallery} from '../components/Gallery'
 import {Header} from '../components/Header'
 import {Menu} from '../components/Menu'
 
+const apiDrinks = await fetch("http://localhost:4000/api/drinks")
+const data = await apiDrinks.json();
+console.log(data)
+
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
@@ -17,7 +21,9 @@ document.querySelector('#root').innerHTML = render(
     </header>
     <main>
        <Banner></Banner> 
-      <Menu></Menu>
+      <Menu
+       drinks = {data.result}
+      ></Menu>
       <Gallery></Gallery>
       <Contact></Contact>
     </main>
